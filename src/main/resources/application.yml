@@ -1,0 +1,28 @@
+server:
+  port: ${PORT}
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      enabled: true
+
+cross:
+  origin: ${CROSS_ORIGIN}
+
+logging:
+  level:
+    io: error
+    com.origin: info
+    org.springframework.web: error
+    org.springframework.util: error
+    org.springframework.context.support: error
+    org.springframework.boot.web.servlet: error
+    org.springframework.jmx.export.annotation: error
+    org.springframework.boot.actuate.endpoint.mvc: error
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [correlationId=%X{cid}] %-5level %logger{36} - %msg%n"

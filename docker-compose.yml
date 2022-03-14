@@ -1,0 +1,10 @@
+services:
+  take-home-assignment:
+    container_name: take-home-assignment
+    image: tka:latest
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      PORT: 8080
+      CROSS_ORIGIN: '*'
